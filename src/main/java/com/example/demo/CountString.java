@@ -10,7 +10,6 @@ public class CountString {
 				qtde++;
 			}
 		}
-		
 		return qtde;
 	}
 }

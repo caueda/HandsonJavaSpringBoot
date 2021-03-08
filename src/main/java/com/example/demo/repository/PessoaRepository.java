@@ -8,4 +8,5 @@ import com.example.demo.domain.Pessoa;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	public List<Pessoa> findByNomeContaining(String nome);
+	List<Pessoa> findByIdadeGreaterThan(Integer idade);
 }

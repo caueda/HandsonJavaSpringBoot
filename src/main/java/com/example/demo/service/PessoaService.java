@@ -9,4 +9,6 @@ public interface PessoaService {
 	public void save(Pessoa pessoa);
 	public Optional<Pessoa> findById(Long id);
 	public List<Pessoa> findByNomeContaining(String nome);
+	
+	public List<Pessoa> findByIdadeGreaterThan(Integer idade);
 }

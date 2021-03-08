@@ -35,4 +35,9 @@ public class PessoaServiceImpl implements PessoaService {
 		return findByNome;
 	}
 
+	@Override
+	public List<Pessoa> findByIdadeGreaterThan(Integer idade) {
+		return this.pessoaRepository.findByIdadeGreaterThan(18);
+	}
+
 }
