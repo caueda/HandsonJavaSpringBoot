@@ -3,8 +3,6 @@ package com.example.demo;
 import java.util.Date;
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -32,7 +30,7 @@ public class InicializaBanco implements CommandLineRunner {
 		pessoa.setIdade(17);
 		pessoaService.save(pessoa);
 		
-		List<Pessoa> searchByNameList = pessoaService.findByIdadeGreaterThan(17);
+		List<Pessoa> searchByNameList = pessoaService.findByIdadeGreaterThan(10);
 		for(Pessoa p: searchByNameList) {
 			System.out.println(">>> " + p.getNome());
 			if(p.getNome().equals("Spider Woman")) {

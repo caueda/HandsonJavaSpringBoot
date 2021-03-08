@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.domain.Pessoa;
 import com.example.demo.repository.PessoaRepository;
@@ -19,6 +20,7 @@ public class PessoaServiceImpl implements PessoaService {
 	}
 
 	@Override
+	@Transactional
 	public void save(Pessoa pessoa) {
 		this.pessoaRepository.save(pessoa);
 	}
@@ -37,7 +39,7 @@ public class PessoaServiceImpl implements PessoaService {
 
 	@Override
 	public List<Pessoa> findByIdadeGreaterThan(Integer idade) {
-		return this.pessoaRepository.findByIdadeGreaterThan(18);
+		return this.pessoaRepository.findByIdadeGreaterThan(idade);
 	}
 
 }
